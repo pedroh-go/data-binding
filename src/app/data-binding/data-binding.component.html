@@ -1,20 +1,68 @@
-<section class="property-binding">
+<div class="container">
+    <section class="property-binding">
 
-    <article>
-        <h3>Interpolation / Interpolação</h3>
-        <p>String renderizada com interpolação: {{ url }}</p>
-        <p>Cálculo matemático com interpolação: 1 + 1 = {{ 1 + 1}}</p>
-        <p>Cálculo matemático com interpolação e função: 1 + 1 não é {{ 1 + 1 +  getValor() }}</p>
-        <p>Retorno boelano com interpolação + função e operador &&: {{ cursoAngular && getCurtirCurso() }}</p>
-    </article>
+        <article>
+            <h3>Interpolation / Interpolação</h3>
+            <p>String renderizada com interpolação: {{ url }}</p>
+            <p>Cálculo matemático com interpolação: 1 + 1 = {{ 1 + 1}}</p>
+            <p>Cálculo matemático com interpolação e função: 1 + 1 não é {{ 1 + 1 +  getValor() }}</p>
+            <p>Retorno boelano com interpolação + função e operador &&: {{ cursoAngular && getCurtirCurso() }}</p>
+        </article>
+        <hr/>
+        <article>
 
-    <article>
+            <h3>Property Binding</h3>
+            <!--<img src="{{ urlImagem }}" width="300">
+            <br/>-->
+            <img [src]="urlImagem" width="300" title="Imagem renderizada com Uso explícito do Property Binding"><!--Uso explícito do Property Binding-->
+            <!--<br/>
+            <img bind-src="urlImagem" width="300" title="O que ocorre na imagem acima é a mesma coisa que é feita aqui, porém mais simples">
+            -->
+        </article>
+        <hr/>
+        <article>
+            <h3>Class e Style Binding</h3>
+            <div>
+                <h5>Class Binding</h5>
+                Selecione uma classe:
+                <select #classe (change)="0"><!-- #classe(variável local de template), (change) evento a ser escutado para verificar a mudança de valor -->
+                    <option value="alert-success">Sucesso</option>
+                    <option value="alert-info">Info</option>
+                    <option value="alert-warning">Alerta</option>
+                    <option value="alert-danger">Erro</option>
+                </select>
 
-        <h3>Property Binding</h3>
-        <img src="{{ urlImagem }}" width="300">
-        <br/>
-        <img [src]="urlImagem" width="300" title="Imagem renderizada com Uso explícito do Property Binding"><!--Uso explícito do Property Binding-->
-        <br/>
-        <img bind-src="urlImagem" width="300" title="O que ocorre na imagem acima é a mesma coisa que é feita aqui, porém mais simples">
-    </article>
-</section>
+                <br/><br/>
+                <!-- Explicação da linha abaixo: o class binding [class.alert-success] será aplicado se o valor da variável 'classe' for igual a String(alert-success) -->
+                <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+
+                <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+                <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">Alerta</div>
+                <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">Error</div>
+
+                <!-- Usando interpolation para acessar o valor da variável(classe) de template local-->
+                <div class="alert {{ classe.value }}"  role="alert">Alterando a cor da div com Interpolation</div>
+            </div>
+
+            <h5>Style Binding</h5>
+            <div>
+                <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+                    Esta mensagem só aparece se houver erro.
+                </div>
+            </div>
+
+        </article>
+    </section>
+    <hr/>
+    <section class="event-binding">
+
+        <article>
+            <h3>Event Binding</h3>
+            <div>
+                <button class="btn btn-primary">Me clique!</button>
+
+            </div>
+        </article>
+
+    </section>
+</div>
