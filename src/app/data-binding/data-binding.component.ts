@@ -11,12 +11,23 @@ export class DataBindingComponent implements OnInit {
   cursoAngular: boolean =  true;
   urlImagem: string = 'https://st3.depositphotos.com/2435397/17055/i/450/depositphotos_170557180-stock-photo-cartoon-scene-wolf-piglets-traditional.jpg';
 
+  valorAtual: string = '';
+
   getValor(){
     return 1;
   }
 
   getCurtirCurso(){
     return true;
+  }
+
+  botaoClicado(){
+    alert("Olá mundo");
+  }
+
+  onKeyUp(evento: KeyboardEvent){
+    //console.log((<HTMLInputElement>evento.target).value);
+    this.valorAtual = (<HTMLInputElement>evento.target).value;
   }
 
   constructor() { }
