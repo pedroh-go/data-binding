@@ -129,12 +129,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <section class="event-binding">
         <article>
           <h3>To-way data binding</h3>
           <div>
-
             <!-- os 3 primeiros input abaixo são apenas uma demonstração, mas não é recomendado para a versão atual do Angular.
                  Criado onKeyUpValue, pois iste código não funciona: (input)="nome = $event.target.value" -->
             <!--<input type="text" [value]="nome" (input)="onKeyUpValue($event.target)"/>
@@ -142,30 +141,54 @@
             <input type="text" bindon-ngModel="nome"/> Forma canônica: bind + on + ngModel. Junção de Binding de propriedade com binging de eventos-->
 
             <!-- USE DESTA FORMA: binding de propriedade '[]' + binding de eventos '()' -->
-            Com variável: <input type="text" [(ngModel)]="nome"/><!-- Dica pra lembrar a sintaxe: [()], banana na caixa-->
-            <p>Você digitou {{ nome }} </p>
+            Com variável:
+            <input
+              type="text"
+              [(ngModel)]="nome"
+            /><!-- Dica pra lembrar a sintaxe: [()], banana na caixa-->
+            <p>Você digitou {{ nome }}</p>
           </div>
         </article>
 
-        <hr/>
+        <hr />
 
         <h6>To-way data binding com objeto</h6>
         <div class="row g-3">
-
-          <div class="col-md-12">Meu nome é pessoa {{ pessoa.nome }} e tenho {{ pessoa.idade }} de idade.</div>
+          <div class="col-md-12">
+            Meu nome é pessoa {{ pessoa.nome }} e tenho {{ pessoa.idade }} de
+            idade.
+          </div>
 
           <div class="col-md-6">
             <label for="inputNome" class="form-label">Nome</label>
-            <input type="text" class="form-control" [(ngModel)]="pessoa.nome">
+            <input type="text" class="form-control" [(ngModel)]="pessoa.nome" />
           </div>
 
           <div class="col-md-6">
             <label for="inputIdade" class="form-label">Idade</label>
-            <input type="text" class="form-control" [(ngModel)]="pessoa.idade">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="pessoa.idade"
+            />
           </div>
         </div>
-        <br/><br/><br/>
+        <br /><br /><br />
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <section class="event-binding">
+        <article>
+          <h3>Reusando Componentes com Input/Output properties</h3>
+
+          <app-curso [nome]="nomeDoCurso"></app-curso> <!-- 'nome' é o apelido de uma variável definida em 'input-property.component.ts'-->
+
+        </article>
       </section>
     </div>
   </div>
 </div>
+<br /><br /><br />
