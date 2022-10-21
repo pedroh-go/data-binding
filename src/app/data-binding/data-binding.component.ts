@@ -28,7 +28,7 @@ export class DataBindingComponent implements OnInit {
   //Objeto Pessoa
   pessoa = {nome: '', idade: 18};
 
-  nomeDoCurso: string = 'Curso Angular';//Variável para teste de compartilhamento de dados entre componentes.
+  nomeDoCurso: string = 'Curso Angular';//Variável para teste de compartilhamento de dados entre componentes..
 
   getValor() {
     return 1;

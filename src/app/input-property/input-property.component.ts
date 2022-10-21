@@ -10,7 +10,7 @@ export class InputPropertyComponent implements OnInit {
 
   /**
    * decorator '@Input(nome)' irá expor a propriedade 'nome' para o selector 'app-curso' e assim será visível em 'data-binding.component.html'
-   * dessa forma 'nome' é o que será exposto externamente e 'nomeCurso' para uso interno.
+   * dessa forma 'nome' será exposto externamente e 'nomeCurso' para uso interno.
    */
   @Input('nome') nomeCurso: string = '';
 
