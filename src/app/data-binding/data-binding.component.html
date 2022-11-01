@@ -184,11 +184,30 @@
         <article>
           <h3>.. Reusando Componentes com Input / Output properties ..</h3>
 
-          <app-curso [nome]="nomeDoCurso"></app-curso> <!-- 'nome' é o apelido de uma variável definida em 'input-property.component.ts'-->
-
+          <app-curso [nome]="nomeDoCurso"></app-curso>
+          <!-- 'nome' é o apelido de uma variável definida em 'input-property.component.ts'-->
         </article>
       </section>
     </div>
   </div>
+
+  <br /><br /><br />
+
+  <div class="row">
+    <div class="col-sm-12">
+      <section class="input-output-properties">
+        <article>
+          <h3>Input/Output Properties</h3>
+         <!--<contador valor="10"></contador>-->
+
+
+         <!--passando valor com property building. mudouValor é um evento customizado disparado pelo componente filho-->
+          <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador>
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <br /><br /><br />
+
 </div>
-<br /><br /><br />

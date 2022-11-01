@@ -30,6 +30,8 @@ export class DataBindingComponent implements OnInit {
 
   nomeDoCurso: string = 'Curso Angular';//Variável para teste de compartilhamento de dados entre componentes..
 
+  valorInicial: number = 15;
+
   getValor() {
     return 1;
   }
@@ -62,6 +64,10 @@ export class DataBindingComponent implements OnInit {
     this.isMouseOver = !this.isMouseOver;
   }
 
+  onMudouValor(evento: any){
+    //console.log(evento);
+    console.log(evento.novoValor);//novoValor é um objeto retornado pela função emit() em 'output-property.component.ts'
+  }
 
   constructor() {}
 
