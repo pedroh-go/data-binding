@@ -1,1 +1,14 @@
 <app-data-binding></app-data-binding>
+
+<app-ciclo [valorInicial]="valor" *ngIf="!deletarCiclo"></app-ciclo>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn  btn-primary" (click)="mudarValor()">Mudar Valor</button>
+      <button class="btn  btn-warning" (click)="destruirCiclo()" title="Ao pressionar o evento do ciclo de vida onDestroy será ativado.">Destruir Ciclo</button>
+    </div>
+  </div>
+</div>
+
+<br><br><br>
