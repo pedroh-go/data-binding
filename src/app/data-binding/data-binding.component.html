@@ -136,16 +136,14 @@
           <div>
             <!-- os 3 primeiros input abaixo são apenas uma demonstração, mas não é recomendado para a versão atual do Angular.
                  Criado onKeyUpValue, pois iste código não funciona: (input)="nome = $event.target.value" -->
+
             <!--<input type="text" [value]="nome" (input)="onKeyUpValue($event.target)"/>
             <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event"/>
             <input type="text" bindon-ngModel="nome"/> Forma canônica: bind + on + ngModel. Junção de Binding de propriedade com binging de eventos-->
 
             <!-- USE DESTA FORMA: binding de propriedade '[]' + binding de eventos '()' -->
             Com variável:
-            <input
-              type="text"
-              [(ngModel)]="nome"
-            /><!-- Dica pra lembrar a sintaxe: [()], banana na caixa-->
+            <input type="text" [(ngModel)]="nome" /><!-- Dica pra lembrar a sintaxe: [()], banana na caixa-->
             <p>Você digitou {{ nome }}</p>
           </div>
         </article>

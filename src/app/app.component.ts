@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+/* @Component é um Transpiling responsável por passar informações(metadados) do componente ao compilador*/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

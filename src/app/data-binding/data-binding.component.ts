@@ -16,8 +16,7 @@ import { Component, OnInit } from '@angular/core';
 export class DataBindingComponent implements OnInit {
   url: string = 'https://github.com/pedroh-go';
   cursoAngular: boolean = true;
-  urlImagem: string =
-    'https://st3.depositphotos.com/2435397/17055/i/450/depositphotos_170557180-stock-photo-cartoon-scene-wolf-piglets-traditional.jpg';
+  urlImagem: string = 'https://st3.depositphotos.com/2435397/17055/i/450/depositphotos_170557180-stock-photo-cartoon-scene-wolf-piglets-traditional.jpg';
 
   //Declaração de variáveis usando TypeScript para Tipar
   conteudoAtual: string = '';
@@ -26,7 +25,10 @@ export class DataBindingComponent implements OnInit {
   nome: string = 'abc';
 
   //Objeto Pessoa
-  pessoa = {nome: '', idade: 18};
+  pessoa = {
+      nome: '',
+      idade: 18
+  };
 
   nomeDoCurso: string = 'Curso Angular';//Variável para teste de compartilhamento de dados entre componentes..
 
